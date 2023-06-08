@@ -10,7 +10,9 @@ namespace FileIOOperations
     {
         static void Main(string[] args)
         {
-            FileExists();
+            //FileExists();
+            ReadAllLines();
+            ReadAllText();
         }
         public static void FileExists()
         {
@@ -24,6 +26,21 @@ namespace FileIOOperations
                 Console.WriteLine("File does not exist.");
             }
         }
-        
+        public static void ReadAllLines()
+        {
+            string path = @"C:\Users\thora\source\repos\FileIOOperations\FileIOOperations\Example.txt";
+            string[] lines;
+            lines = File.ReadAllLines(path);
+
+            Console.WriteLine(lines[0]);//to print line
+        }
+        public static void ReadAllText()
+        {
+            string path = @"C:\Users\thora\source\repos\FileIOOperations\FileIOOperations\Example.txt";
+            string lines;
+            lines = File.ReadAllText(path);
+
+            Console.WriteLine(lines[0]);// to print char
+        }
     }
 }
